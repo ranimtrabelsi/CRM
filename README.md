@@ -1,1 +1,2 @@
-![Black   Yellow Minimalist Company Construction Flyer (2)](https://github.com/user-attachments/assets/d2a6fbad-2369-4b69-a7e4-5fbc619ac5d2)
+
+![Black   Yellow Minimalist Company Construction Flyer](https://github.com/user-attachments/assets/2bfc4ec3-1c8a-4e3d-a072-5e27f78ca0a0)
