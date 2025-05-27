@@ -1,0 +1,33 @@
+<h1>Reclamation</h1>
+
+<form nz-form nzLayout="vertical" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <nz-form-item nz-row>
+    <nz-form-label>
+      <label for="subject">Subject</label>
+    </nz-form-label >
+    <nz-form-control>
+      <input nz-input id="subject" formControlName="subject" placeholder="Enter subject">
+      <div *ngIf="form.get('subject')?.invalid && form.get('subject')?.touched" class="error">
+        Subject is required
+      </div>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item nz-row>
+    <nz-form-label>
+      <label for="description">Description</label>
+    </nz-form-label>
+    <nz-form-control >
+      <textarea nz-input id="description" formControlName="description" rows="8" placeholder="Enter description"></textarea>
+      <div *ngIf="form.get('description')?.invalid && form.get('description')?.touched" class="error">
+        Description is required and must be at least 10 characters
+      </div>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item nz-row>
+    <nz-form-control nz-col>
+      <button style="width: 100%" nz-button nzType="primary" [disabled]="form.invalid">Submit</button>
+    </nz-form-control>
+  </nz-form-item >
+</form>

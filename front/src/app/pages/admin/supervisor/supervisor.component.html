@@ -1,0 +1,69 @@
+<h1>List SUpervisor</h1>
+<button style="margin-bottom: 15px;" nz-button nzType="primary" (click)="openModal()" >Add Supervisor</button>
+
+<nz-table [nzScroll]="{ x: '1200px', y: '60vh' }" #middleTable nzSize="middle" [nzData]="data">
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>Name</th>
+    <th>Last Name</th>
+    <th>phoneNumber</th>
+    <th>email</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of middleTable.data">
+    <td>{{ data.id }}</td>
+    <td>{{ data?.firstName }}</td>
+    <td>{{ data.lastName }}</td>
+    <td>{{ data.phoneNumber }}</td>
+    <td>{{ data.email }}</td>
+    <td>
+      <button *ngIf="data.isEnabled === true" style="margin-right: 10px" nz-button nzType="primary" (click)="showConfirm(data.id)" nzDanger>Block</button>
+      <button *ngIf="data.isEnabled === false" style="margin-right: 10px" nz-button nzType="primary" (click)="showConfirmEnable(data.id)">Activate</button>    </td>
+  </tr>
+  </tbody>
+</nz-table>
+<nz-modal [(nzVisible)]="isModalVisible" (nzOnOk)="addData()" (nzOnCancel)="handleCancel()" [nzOkDisabled]="!formData.valid" nzTitle="Add Supervisor">
+  <ng-container *nzModalContent>
+    <form nz-form nzLayout="vertical" [formGroup]="formData">
+      <nz-form-item>
+        <nz-form-label>Name</nz-form-label>
+        <nz-form-control>
+          <input nz-input formControlName="firstName" required>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label>Last Name</nz-form-label>
+        <nz-form-control>
+          <input nz-input formControlName="lastName" required>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label>Phone Number</nz-form-label>
+        <nz-form-control>
+          <input nz-input type="number" formControlName="phoneNumber" required>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label>Email</nz-form-label>
+        <nz-form-control>
+          <input nz-input formControlName="email" required>
+        </nz-form-control>
+      </nz-form-item>
+
+      <!-- You can add more fields as needed -->
+
+      <nz-form-item>
+        <nz-form-label>Password</nz-form-label>
+        <nz-form-control>
+          <input nz-input type="password" formControlName="password" required>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </ng-container>
+</nz-modal>

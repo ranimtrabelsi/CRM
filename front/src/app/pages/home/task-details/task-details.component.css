@@ -1,0 +1,34 @@
+h1{
+  color: #1890ff;
+  margin-bottom: 10px;
+}
+.client-details {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.client-details .detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.client-details .label {
+  font-weight: bold;
+  color: #333;
+}
+
+.client-details .value {
+  color: #666;
+}
+
+h1 {
+  text-align: center;
+  color: #4a90e2;
+  margin-bottom: 20px;
+}

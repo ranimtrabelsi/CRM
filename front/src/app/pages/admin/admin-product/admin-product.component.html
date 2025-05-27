@@ -1,0 +1,73 @@
+<h1>List Product</h1>
+<button style="margin-bottom: 15px;" nz-button nzType="primary" (click)="openModal()" >Add Product</button>
+
+
+<nz-table  #middleTable nzSize="middle" [nzData]="productList">
+  <thead>
+  <tr>
+    <th >Name</th>
+    <th >description</th>
+    <th >price</th>
+    <th >quantity</th>
+    <th >Image</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of middleTable.data">
+    <td>{{ item?.name }}</td>
+    <td>{{ item?.description }}</td>
+    <td>{{ item?.price }} DT</td>
+    <td>{{ item?.quantity }}</td>
+    <td> <img [src]="item?.imageUrl" alt="Downloaded Image" width="100"></td>
+    <td>
+      <button nz-button nzType="primary" (click)="showConfirm(item.id.toString())" nzDanger>
+        <span nz-icon nzType="delete" nzTheme="outline"></span>
+        delete
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>
+<nz-modal [(nzVisible)]="isModalVisible" (nzOnOk)="submitForm()" (nzOnCancel)="handleCancel()" [nzOkDisabled]="!validateForm.valid" nzTitle="Add Product">
+  <ng-container *nzModalContent>
+    <form  nzLayout="vertical" nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+      <nz-form-item style="width: 100%;">
+        <nz-form-label nzFor="title">name</nz-form-label>
+        <nz-form-control nzErrorTip="Title is required!">
+          <nz-input-group>
+            <input id="name" type="text" nz-input formControlName="name" placeholder="Enter your name" style="width: 100%;"/>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item style="width: 100%;">
+        <nz-form-label nzFor="description">Description</nz-form-label>
+        <nz-form-control nzErrorTip="Description is required!">
+          <nz-input-group>
+            <input id="description" type="text" nz-input formControlName="description" placeholder="Enter your description" style="width: 100%;"/>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item style="width: 100%;">
+        <nz-form-label nzFor="ExternalLink">price</nz-form-label>
+        <nz-form-control nzErrorTip="ExternalLink is required">
+          <nz-input-group>
+            <input type="number" id="price" nz-input formControlName="price" placeholder="Enter Price"  style="width: 100%"/>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item style="width: 100%;">
+        <nz-form-label nzFor="ExternalLink">Quantity</nz-form-label>
+        <nz-form-control>
+          <nz-input-group>
+            <input type="number"  step="0.01" id="quantity" nz-input formControlName="quantity" placeholder="Enter your Quantity"  style="width: 100%"/>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <div>
+        <nz-form-label nzFor="Image">Image</nz-form-label>
+        <input nz-input id="image" type="file" placeholder="upload course image" (change)="changeImage($event)"/>
+      </div>
+    </form>
+  </ng-container>
+</nz-modal>

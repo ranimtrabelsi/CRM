@@ -1,0 +1,90 @@
+h1{
+  color: #1890ff;
+  margin-bottom: 10px;
+  margin-left: 10px;;
+}
+.container{
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+}
+.job-card {
+  margin-bottom: 20px;
+  margin-inline: 10px;
+  cursor: pointer;
+}
+
+.job-card nz-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  width: 300px;
+  min-height: 450px;
+}
+
+.job-card nz-card:hover {
+  transform: translateY(-5px);
+}
+
+.job-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.job-card p strong {
+  font-weight: 600;
+}
+
+.job-card nz-card .ant-card-head-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+.iframe-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.responsive-iframe {
+  width: 100%;
+  height: 70vh; /* Adjust height as necessary */
+  border: none;
+}
+.number-input {
+  display: flex;
+  align-items: center;
+}
+
+.number-input button {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.number-input nz-input-number {
+  width: 100px;
+  text-align: center;
+  margin: 0 5px;
+}
+
+
+@media (max-width: 768px) {
+  .job-card {
+    margin-bottom: 15px;
+    margin-inline: 0;
+
+  }
+  .job-card nz-card {
+    padding: 10px;
+  }
+  .job-card p {
+    font-size: 12px;
+  }
+  .job-card nz-card .ant-card-head-title {
+    font-size: 16px;
+  }
+}

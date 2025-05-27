@@ -1,0 +1,65 @@
+.chart-global-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80%;
+}
+.chart-container{
+  width: 45%;
+  height: 60%;
+  text-align: center;
+}
+.chart-container p{
+  font-size: 20px;
+  margin-top: 10px;
+}
+/* status-cards.component.css */
+.status-cards-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin: 20px;
+}
+
+nz-card {
+  width: 30%;
+  height: 150px;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+
+
+
+i[nz-icon] {
+  font-size: 24px;
+  color: white;
+}
+.titleContainer{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.card-blue {
+  background: linear-gradient(to bottom right, #1e3c72, #8caef5);}
+
+.card-green {
+  background: linear-gradient(to bottom right, #43cea2, #185a9d); /* Example green gradient */
+}
+
+.card-red {
+  background: linear-gradient(to bottom right, #ff5f6d, #ffc371); /* Example red gradient */
+}

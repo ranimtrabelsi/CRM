@@ -1,0 +1,35 @@
+<div class="status-cards-container">
+  <nz-card class="card-blue">
+    <nz-card-meta [nzTitle]="nzTitle1" [nzDescription]="nzDescription1">
+      <ng-template #nzTitle1>
+        <div class="titleContainer">
+          <span>Clients</span>
+          <i nz-icon nzType="user" nzTheme="outline"></i>
+        </div>
+      </ng-template>
+      <ng-template #nzDescription1>
+        <h2 style="color: white">Number of Clients: {{ numberOfClients }}</h2>
+      </ng-template>
+    </nz-card-meta>
+  </nz-card>
+
+  <div class="chart-container">
+    <canvas  id="MyChart3" >{{ chart3 }}</canvas>
+    <p>Tasks</p>
+  </div>
+</div>
+
+
+<div class="chart-global-container">
+  <div class="chart-container">
+    <canvas  id="MyChart" >{{ chart }}</canvas>
+   <p>Number of task per day</p>
+  </div>
+  <div class="chart-container">
+    <canvas  id="MyChart2" >{{ chart2 }}</canvas>
+    <p>Number of Client per month</p>
+  </div>
+</div>
+
+
+

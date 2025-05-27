@@ -1,0 +1,38 @@
+.basket-container{
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.basket-item-card {
+  margin-bottom: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h3 {
+  margin: 0;
+}
+
+p {
+  margin: 4px 0;
+}
+
+strong {
+  font-weight: bold;
+}
+.checkout-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

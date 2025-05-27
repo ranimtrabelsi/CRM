@@ -1,0 +1,35 @@
+<div class="container">
+  <h1 style="color: #1890ff; font-size: 30px">Profile</h1>
+  <div class="profile-container">
+    <form nz-form nzLayout="vertical" [formGroup]="profileForm">
+      <nz-form-item>
+        <nz-form-label>First Name</nz-form-label>
+        <nz-form-control>
+          <input  nz-input formControlName="firstName" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Last Name</nz-form-label>
+        <nz-form-control>
+          <input nz-input  formControlName="lastName" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Phone</nz-form-label>
+        <nz-form-control>
+          <input  nz-input formControlName="phoneNumber" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Email</nz-form-label>
+        <nz-form-control>
+          <input readonly nz-input formControlName="email" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <button nz-button nzSize="large" nzType="primary" (click)="onSubmit()">UPDATE PROFILE</button>
+      </nz-form-item>
+    </form>
+  </div>
+</div>
+

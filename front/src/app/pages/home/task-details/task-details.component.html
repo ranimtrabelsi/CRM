@@ -1,0 +1,58 @@
+<h1>Project Details</h1>
+<div class="client-details" #clientDetails>
+  <div class="detail-item">
+    <span class="label">ID:</span> <span class="value">{{ client?.id }}</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">Name:</span> <span class="value">{{ client?.name }}</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">Time:</span> <span class="value">{{ client?.timeInHours }} Hours</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">END AT:</span> <span class="value">{{ client?.endAt?.slice(0,10) }}</span>
+  </div>
+  <div class="detail-item">
+    <span class="label">description:</span> <span class="value">{{ client?.description }}</span>
+  </div>
+</div>
+<button *ngIf="userData.role.name === 'TECHNICIAN'" style="margin-bottom: 15px;" nz-button nzType="primary" (click)="openModal()" >Add Sub Task</button>
+
+<nz-table style="margin-top: 20px;" #middleTable nzSize="middle" [nzData]="data">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>description</th>
+    <th *ngIf="userData.role.name === 'TECHNICIAN'" >Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of middleTable.data">
+    <td>{{ data?.title }}</td>
+    <td>{{ data?.description }}</td>
+    <td *ngIf="userData.role.name === 'TECHNICIAN'" >
+      <button style="margin-right: 10px" nz-button nzType="primary" (click)="showConfirm(data.id)" nzDanger>Delete</button>
+      <button nz-button nzType="primary" (click)="openEditModal(data)">Edit</button>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>
+<nz-modal [(nzVisible)]="isModalVisible" (nzOnOk)="addData()" (nzOnCancel)="handleCancel()" [nzOkDisabled]="!formData.valid" nzTitle="Add / edit materiel">
+  <ng-container *nzModalContent>
+    <form nz-form nzLayout="vertical" [formGroup]="formData">
+      <nz-form-item>
+        <nz-form-label>Title</nz-form-label>
+        <nz-form-control>
+          <input nz-input formControlName="title" required>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label>Description</nz-form-label>
+        <nz-form-control>
+          <textarea nz-input formControlName="description" required></textarea>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </ng-container>
+</nz-modal>

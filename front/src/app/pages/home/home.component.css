@@ -1,0 +1,73 @@
+.example-board {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.example-container {
+  width: 30%;
+  padding: 10px;
+  box-sizing: border-box;
+
+}
+
+.example-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: gray;
+}
+
+.example-list {
+  background: #ffffff; /* White background for better contrast */
+  border: 1px solid #e8e8e8;
+  min-height: 400px;
+  padding: 10px;
+  border-radius: 8px;
+  overflow: auto;
+  max-height: 60vh;
+  overflow-y: scroll;
+}
+
+.example-box {
+  margin-bottom: 10px;
+  cursor: grab;
+}
+
+nz-card {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+nz-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nz-card p {
+  margin: 0;
+  color: #595959; /* Dark grey text */
+}
+
+.example-box button {
+  margin-top: 10px;
+}
+.status-todo {
+  color: #b0b006;
+}
+.status-current {
+  color: blue;
+}
+.status-completed {
+  color: green;
+}
+
+
+@media (max-width: 768px) {
+  .example-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

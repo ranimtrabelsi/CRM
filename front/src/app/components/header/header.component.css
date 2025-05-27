@@ -1,0 +1,136 @@
+.admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%; /* La hauteur est définie à 100% de la hauteur de la page */
+    width: 250px; /* Définissez la largeur souhaitée */
+    background-color: #f8f9fa; /* Couleur de fond */
+    overflow-y: auto; /* Défilement vertical si nécessaire */
+    z-index: 1000; /* Assurez-vous qu'il est au-dessus du contenu principal */
+  }
+  
+  .admin-dashboard-header {
+    position: fixed; /* Position fixe */
+    top: 40px; /* Aligné en haut de la fenêtre */
+    left: 0; /* Aligné à gauche de la fenêtre */
+    width: 250px; /* Définissez la largeur souhaitée */
+    height: 100vh; /* Définit la hauteur de l'en-tête du tableau de bord sur 100% de la hauteur de la vue (viewport) */
+    background-color: orange; /* Couleur de fond orange pour l'en-tête du tableau de bord */
+    z-index: 999; /* Assurez-vous qu'il est au-dessus du contenu principal */
+    transition: top 10s; /* Ajouter une transition pour une animation fluide */
+
+  }
+  .nav-link {
+    color: rgb(220, 219, 217); /* Couleur de fond orange pour l'en-tête du tableau de bord */
+    text-decoration: none; /* Supprime le soulignement par défaut des liens */
+    font-weight: bold; /* Met en gras le texte */
+}
+
+.nav-link:hover {
+    color:rgb(16, 11, 2) ;
+}
+.admin-header {
+
+    display: flex;
+    align-items: center;
+}
+.admin-header-container {
+    margin-top:6px;
+    background-color: rgb(98, 68, 12); /* Couleur de fond orange pour l'en-tête du tableau de bord */
+    margin-bottom: 30px; /* Ajoute un espace de 20px en bas */
+
+    border: 4px solid rgb(5, 5, 18); /* Cadre de couleur bleue */
+    padding: 10px; /* Espacement intérieur du cadre */
+    border-radius: 10px; /* Coins arrondis du cadre */
+}
+.admin-header img {
+    margin-right: 10px; /* Espace de 10px entre l'image et le texte */
+    margin-top:6px;
+    border-radius: 50%; /* Forme de cercle */
+    width: 80px; height: 80;
+}
+
+.admin-header h3 {
+    margin-top: 4px; /* Espace de 4px au-dessus du texte */
+    margin-bottom: 0; /* Supprime les marges par défaut du titre */
+}
+
+  .navbar {
+    width: 100%; /* Définir la largeur sur 100% de la largeur de la page */
+  }
+  
+  .orange-background {
+    background-color: orange; /* Couleur de fond orange pour l'en-tête du tableau de bord */
+  }
+  
+  .existing-content {
+    margin-left: 250px; /* Ajustez la marge gauche pour laisser de l'espace pour la barre latérale de l'administration */
+  }.customer-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%; /* La hauteur est définie à 100% de la hauteur de la page */
+    width: 250px; /* Définissez la largeur souhaitée */
+    background-color: #f8f9fa; /* Couleur de fond */
+    overflow-y: auto; /* Défilement vertical si nécessaire */
+    z-index: 1000; /* Assurez-vous qu'il est au-dessus du contenu principal */
+  }
+  
+  .customer-dashboard-header {
+    position: fixed; /* Position fixe */
+    top: 40px; /* Aligné en haut de la fenêtre */
+    left: 0; /* Aligné à gauche de la fenêtre */
+    width: 250px; /* Définissez la largeur souhaitée */
+    height: 100vh; /* Définit la hauteur de l'en-tête du tableau de bord sur 100% de la hauteur de la vue (viewport) */
+    background-color: orange; /* Couleur de fond orange pour l'en-tête du tableau de bord */
+    z-index: 999; /* Assurez-vous qu'il est au-dessus du contenu principal */
+    transition: top 10s; /* Ajouter une transition pour une animation fluide */
+
+  }
+  .nav-link {
+    color: rgb(220, 219, 217); /* Couleur de fond orange pour l'en-tête du tableau de bord */
+    text-decoration: none; /* Supprime le soulignement par défaut des liens */
+    font-weight: bold; /* Met en gras le texte */
+}
+
+.nav-link:hover {
+    color:rgb(16, 11, 2) ;
+}
+.customer-header {
+
+    display: flex;
+    align-items: center;
+}
+.customer-header-container {
+    margin-top:6px;
+    background-color: rgb(98, 68, 12); /* Couleur de fond orange pour l'en-tête du tableau de bord */
+    margin-bottom: 30px; /* Ajoute un espace de 20px en bas */
+
+    border: 4px solid rgb(5, 5, 18); /* Cadre de couleur bleue */
+    padding: 10px; /* Espacement intérieur du cadre */
+    border-radius: 10px; /* Coins arrondis du cadre */
+}
+.customer-header img {
+    margin-right: 10px; /* Espace de 10px entre l'image et le texte */
+    margin-top:6px;
+    border-radius: 50%; /* Forme de cercle */
+    width: 80px; height: 80;
+}
+
+.customer-header h3 {
+    margin-top: 4px; /* Espace de 4px au-dessus du texte */
+    margin-bottom: 0; /* Supprime les marges par défaut du titre */
+    font-size: 20px;
+}
+
+  .navbar {
+    width: 100%; /* Définir la largeur sur 100% de la largeur de la page */
+  }
+  
+  .orange-background {
+    background-color: orange; /* Couleur de fond orange pour l'en-tête du tableau de bord */
+  }
+  
+  .existing-content {
+    margin-left: 250px; /* Ajustez la marge gauche pour laisser de l'espace pour la barre latérale de l'customeristration */
+  }

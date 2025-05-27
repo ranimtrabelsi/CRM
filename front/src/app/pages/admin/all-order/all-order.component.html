@@ -1,0 +1,36 @@
+<h1>My Orders</h1>
+<nz-table [nzBordered]="true" style="margin-top: 20px;" #middleTable nzSize="middle" [nzData]="data">
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>description</th>
+    <th >price</th>
+    <th>Client</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of middleTable.data">
+    <td>{{ data?.id }}</td>
+    <td>
+      <nz-table [nzBordered]="true" [nzFrontPagination]="false" style="margin-top: 20px;" #size nzSize="middle" [nzData]="data.cartItems">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th >quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let data of size.data">
+          <td>{{ data?.product.name }}</td>
+          <td>{{ data?.quantity }}</td>
+        </tr>
+        </tbody>
+      </nz-table>
+    </td>
+    <td  >
+      {{ data.totalPrice }} DT
+    </td>
+    <td>{{ data?.user.firstName }} {{ data?.user.lastName }}</td>
+  </tr>
+  </tbody>
+</nz-table>

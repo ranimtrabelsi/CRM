@@ -1,0 +1,24 @@
+form{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  margin: 0 auto;
+}
+nz-form-item{
+  width: 100%;
+}
+label{
+  font-size: 20px;
+}
+.error {
+  color: red;
+  margin-top: 5px;
+}
+h1{
+  color: #007bff;
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}

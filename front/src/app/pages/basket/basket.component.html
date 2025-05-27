@@ -1,0 +1,31 @@
+<div class="basket-container">
+  <nz-card *ngFor="let item of basketItems" class="basket-item-card">
+    <nz-row nzAlign="middle">
+      <nz-col [nzSpan]="6">
+        <img [src]="item.imageUrl" [alt]="item.product.name" class="product-image" />
+      </nz-col>
+      <nz-col [nzSpan]="18" class="text-center">
+        <h3>{{ item.product.name }}</h3>
+        <p>{{ item.product.description }}</p>
+        <p>Price: <strong>${{ item.product.price }}</strong></p>
+        <nz-divider></nz-divider>
+        <nz-row nzAlign="middle">
+          <nz-col [nzSpan]="12">
+            <p>Quantity: <strong>{{ item.quantity }}</strong></p>
+          </nz-col>
+          <nz-col [nzSpan]="12" nzAlign="end">
+            <p>Total: <strong>${{ getTotalPrice(item).toFixed(2) }}</strong></p>
+          </nz-col>
+          <nz-col [nzSpan]="12" align="end">
+            <button nz-button nzType="primary" (click)="showConfirm(item.id)" nzDanger>Delete</button>
+          </nz-col>
+        </nz-row>
+      </nz-col>
+    </nz-row>
+  </nz-card>
+
+</div>
+<h1 *ngIf="basketItems?.length === 0" > No Product</h1>
+<div class="checkout-button-container">
+  <button nz-button nzType="primary" (click)="onCheckout()">Checkout</button>
+</div>

@@ -1,0 +1,46 @@
+<div id="cc" class="globalContainer">
+  <h1>Product List</h1>
+  <div class="container">
+    <div *ngFor="let job of productList" class="job-card">
+      <nz-card [nzCover]="coverTemplate">
+        <p><strong>Title:</strong> {{ job.name }}</p>
+        <p><strong>Price:</strong> {{ job.price }} DT</p>
+        <p><strong>Description:</strong> {{ job.description }}</p>
+        <p><strong>Quantity:</strong> {{ job.quantity }}</p>
+        <button *ngIf="userData.role.name === 'CLIENT'" (click)="openDrawer(job, job.id)" nz-button nzType="primary">Commander</button>
+
+      </nz-card>
+      <ng-template #coverTemplate>
+        <img alt="example" [src]="job?.imageUrl" width="100%" height="200px"/>
+      </ng-template>
+    </div>
+  </div>
+  <nz-modal
+    nzWidth="60vw"
+    [(nzVisible)]="drawerVisible"
+    nzTitle="Commander"
+    (nzOnCancel)="closeDrawer()"
+    (nzOnOk)="handleOk()"
+    nzOkText="Commander"
+    nzCentered>
+    <div *nzModalContent class="iframe-container">
+      <nz-card [nzCover]="coverTemplate1">
+
+      </nz-card>
+      <ng-template #coverTemplate1>
+        <img alt="example" [src]="selectedProduct?.imageUrl" width="100%" height="200px"/>
+      </ng-template>
+      <nz-card>
+        <h2> {{ selectedProduct.name }}</h2>
+        <p><strong>Price:</strong> {{ selectedProduct.price }} DT</p>
+        <p><strong>Description:</strong> {{ selectedProduct.description }}</p>
+        <p><strong>Quantity:</strong> {{ selectedProduct.quantity }}</p>
+        <div class="number-input">
+          <button nz-button (click)="decrement()">-</button>
+          <nz-input-number [(ngModel)]="value" [nzMin]="1" [nzMax]="selectedProduct?.quantity"></nz-input-number>
+          <button nz-button (click)="increment()">+</button>
+        </div>
+      </nz-card>
+    </div>
+  </nz-modal>
+</div>
